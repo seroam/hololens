@@ -3,39 +3,73 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Animations : MonoBehaviour
-{
+public class Animations : MonoBehaviour {
     private bool animating = false;
+
     Vector3 initialPosition;
-    public void Drop(){
-        if (!animating){
-            initialPosition = gameObject.transform.position;
-            gameObject.GetComponent<Rigidbody>().isKinematic = false;
+    Quaternion initialRotation;
+    Vector3 initialScale;
+
+    public void Drop() {
+        if (!animating) {
+            initialPosition = transform.position;
+            GetComponent<Rigidbody>().isKinematic = false;
             animating = true;
-            Button[] texts = GetComponentsInChildren<Button>();
 
             SetButtonText("Stop animation");
 
         }
         else {
-            gameObject.GetComponent<Rigidbody>().isKinematic = true;
-            gameObject.transform.position = initialPosition;
+            GetComponent<Rigidbody>().isKinematic = true;
+            transform.position = initialPosition;
             animating = false;
 
             SetButtonText("Animate");
-		}
-	}
+        }
+    }
 
-    public void FreakOut(){
-        if (!animating){
-            Animator animator = gameObject.GetComponent<Animator>();
+    public void FreakOut() {
+        if (!animating) {
+            initialPosition = transform.position;
+            initialRotation = transform.rotation;
 
-            Debug.Log("animating");
-		}
+            GetComponent<Animator>().enabled = true;
+            animating = true;
 
-	}
+            SetButtonText("Stop animation");
+        }
+        else {
+            GetComponent<Animator>().enabled = false;
 
-    private void SetButtonText(string s){
+            transform.position = initialPosition;
+            transform.rotation = initialRotation;
+            animating = false;
+
+            SetButtonText("Animate");
+        }
+    }
+
+    public void BlowUp() {
+        if (!animating) {
+            initialScale = transform.localScale;
+
+            GetComponent<AnimateIncreaseScale>().enabled = true;
+            animating = true;
+
+            SetButtonText("Stop animation");
+        }
+        else {
+            GetComponent<AnimateIncreaseScale>().enabled = false;
+
+            transform.localScale = initialScale;
+            animating = false;
+
+            SetButtonText("Animate");
+        }
+
+    }
+
+    private void SetButtonText(string s) {
         GameObject button = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject;
         Text text = button.GetComponentInChildren<Text>();
         if (text != null) {
@@ -43,3 +77,4 @@ public class Animations : MonoBehaviour
         }
     }
 }
+

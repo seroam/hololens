@@ -11,7 +11,8 @@ public class ShowDescription : MonoBehaviour
     void Start()
     {
          _name_to_canvas = new Dictionary<Collider, Canvas> { { GameObject.Find("Smiling_Face_With_Sunglasses").GetComponent<Collider>(), GameObject.Find("info_glasses").GetComponent<Canvas>() },
-                                                              { GameObject.Find("Rolling_On_The_Floor_Laughing").GetComponent<Collider>(), GameObject.Find("info_rofl").GetComponent<Canvas>() }};
+                                                              { GameObject.Find("Rolling_On_The_Floor_Laughing").GetComponent<Collider>(), GameObject.Find("info_rofl").GetComponent<Canvas>() },
+                                                              { GameObject.Find("Exploding_Head").GetComponent<Collider>(), GameObject.Find("info_mind-blown").GetComponent<Canvas>() } };
     }
 
     // Update is called once per frame
