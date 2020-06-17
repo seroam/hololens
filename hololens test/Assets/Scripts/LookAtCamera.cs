@@ -16,6 +16,7 @@ public class LookAtCamera : MonoBehaviour
     void Update()
     {
         Vector3 fwd = camera.transform.forward;
+
         fwd.y = transform.forward.y;
         transform.rotation = Quaternion.LookRotation(fwd);
     }

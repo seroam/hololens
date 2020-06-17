@@ -10,7 +10,8 @@ public class ShowDescription : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-         _name_to_canvas = new Dictionary<Collider, Canvas> { { GameObject.Find("Smiling_Face_With_Sunglasses").GetComponent<Collider>(), GameObject.Find("desc_glasses").GetComponent<Canvas>() } };
+         _name_to_canvas = new Dictionary<Collider, Canvas> { { GameObject.Find("Smiling_Face_With_Sunglasses").GetComponent<Collider>(), GameObject.Find("info_glasses").GetComponent<Canvas>() },
+                                                              { GameObject.Find("Rolling_On_The_Floor_Laughing").GetComponent<Collider>(), GameObject.Find("info_rofl").GetComponent<Canvas>() }};
     }
 
     // Update is called once per frame
