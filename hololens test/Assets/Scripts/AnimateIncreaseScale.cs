@@ -17,11 +17,12 @@ public class AnimateIncreaseScale : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.localScale.x < initialScale.x*maxScaleFactor){
+        transform.localScale = transform.localScale.x < initialScale.x * maxScaleFactor ? transform.localScale + scaleDelta : initialScale;
+        /*if (transform.localScale.x < initialScale.x*maxScaleFactor){
             transform.localScale += scaleDelta;
 		}
         else {
             transform.localScale = initialScale;
-		}
+		}*/
     }
 }

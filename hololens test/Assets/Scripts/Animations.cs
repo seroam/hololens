@@ -68,6 +68,9 @@ public class Animations : MonoBehaviour {
         }
 
     }
+    public void Unknown(){
+        Debug.Log("Unknown called.");
+	}
 
     private void SetButtonText(string s) {
         GameObject button = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject;
