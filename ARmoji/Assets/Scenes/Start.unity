@@ -353,6 +353,11 @@ PrefabInstance:
       propertyPath: m_text
       value: Start
       objectReference: {fileID: 0}
+    - target: {fileID: 6199381210755398806, guid: ee7fe6f3f2cae4640a402a7089a6f2b3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.0016
+      objectReference: {fileID: 0}
     - target: {fileID: 6199381210755398891, guid: ee7fe6f3f2cae4640a402a7089a6f2b3,
         type: 3}
       propertyPath: m_Mesh
