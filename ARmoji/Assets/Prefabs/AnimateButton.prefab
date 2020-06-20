@@ -745,7 +745,7 @@ MonoBehaviour:
   interactable: {fileID: 9184380012941094838}
   seeItSayItLabel: {fileID: 2063912443088092622}
   seeItSatItLabelText: {fileID: 7447317053388067407}
-  iconStyle: 0
+  iconStyle: 3
   iconCharLabel: {fileID: 0}
   iconCharFont: {fileID: 0}
   iconChar: 0

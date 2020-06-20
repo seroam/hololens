@@ -8,6 +8,12 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/StartScene.unity
+    guid: 5a0042a1a1f98574e95cc26c645d64cb
+  - enabled: 1
+    path: Assets/Scenes/Emoji Museum.unity
+    guid: 255da4ac6f7a6dc4ca917a627f35efed
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: cd64f36fbdf900b4bb9b3dc26e533441,
       type: 2}
