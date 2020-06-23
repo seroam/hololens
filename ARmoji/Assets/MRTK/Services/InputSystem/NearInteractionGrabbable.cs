@@ -32,7 +32,7 @@ namespace Microsoft.MixedReality.Toolkit.Input
 
             // Note that there can be multiple colliders on an object - as long as one
             // of them are of the valid type, this object will work with NearInteractionGrabbable
-            Collider[] colliders = gameObject.GetComponents<Collider>();
+            Collider[] colliders = gameObject.GetComponentsInChildren<Collider>();
             bool containsValidCollider = false;
             for (int i = 0; i < colliders.Length && !containsValidCollider; i++)
             {
