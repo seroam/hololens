@@ -20,7 +20,7 @@ public class PlaceLane : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hit, Mathf.Infinity, layerMask)) {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.black);
 
-            Debug.Log($"Hit in position\t({hit.point.x}, {hit.point.y}, {hit.point.z})");
+            //Debug.Log($"Hit in position\t({hit.point.x}, {hit.point.y}, {hit.point.z})");
             if (placing) InstantiateLevel.current.transform.position = hit.point;
         }
         else {
@@ -31,5 +31,7 @@ public class PlaceLane : MonoBehaviour
     public static void Place(){
         placing = false;
         InstantiateLevel.current.GetComponent<LookAtCamera>().enabled = false;
+
+        InstantiateLevel.current.GetComponent<CanvasGroup>().alpha = 1;
 	}
 }

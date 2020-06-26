@@ -12,6 +12,8 @@ public class Shoot : MonoBehaviour {
 
     public float Speed = 10;
 
+    private float ScaledSpeed { get { return InstantiateLevel.current.transform.localScale.x * Speed; } }
+
     private bool running = false;
 
 	void Start()
@@ -43,7 +45,7 @@ public class Shoot : MonoBehaviour {
 
         Vector3 cameraDirection = _camera.transform.forward;
 
-        _rigidbody.velocity = new Vector3(cameraDirection.x * Speed, 0, cameraDirection.z * Speed);
+        _rigidbody.velocity = new Vector3(cameraDirection.x * ScaledSpeed, 0, cameraDirection.z * ScaledSpeed);
         running = true;
 
     }

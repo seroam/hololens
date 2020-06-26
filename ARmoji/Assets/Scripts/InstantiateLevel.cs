@@ -13,6 +13,8 @@ public class InstantiateLevel : MonoBehaviour
     {
         current =  Instantiate(lanePrefab, transform);
 
+        current.GetComponent<CanvasGroup>().alpha = 0.2f;
+
         current.GetComponent<LookAtCamera>().enabled = true;
 
         Interactable lane = current.AddComponent<Interactable>();
