@@ -16,7 +16,7 @@ TagManager:
   - 
   - emojis
   - transitions
-  - 
+  - floor
   - 
   - 
   - 
@@ -41,4 +41,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Lane
+    uniqueID: 3185916365
     locked: 0
