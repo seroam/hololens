@@ -18,6 +18,7 @@ public class InstantiateLevel : MonoBehaviour
         current.GetComponent<LookAtCamera>().enabled = true;
 
         Interactable lane = current.AddComponent<Interactable>();
+        DisablePinPhysics();
         lane.OnClick.AddListener(() => PlaceLane.Place());
 
        // Destroy(current);
@@ -28,6 +29,17 @@ public class InstantiateLevel : MonoBehaviour
         //current = Instantiate(lanePrefab, transform);
         Transform currentTransform = current.transform;
         current = Instantiate(lanePrefab, currentTransform.position, currentTransform.rotation, transform);
-        ;
 	}
+
+    public static void DisablePinPhysics(){
+        foreach (var r in current.GetComponentsInChildren<Rigidbody>()){
+            r.isKinematic = true;
+		}
+	}
+
+    public static void EnablePinPhysics() {
+        foreach (var r in current.GetComponentsInChildren<Rigidbody>()) {
+            r.isKinematic = false;
+        }
+    }
 }

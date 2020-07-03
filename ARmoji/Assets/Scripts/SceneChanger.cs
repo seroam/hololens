@@ -32,12 +32,6 @@ public class SceneChanger : MonoBehaviour
         foreach ( var connection in connections){
             connection.interactable.OnClick.AddListener(() => FadeToScene(connection.scene));
 		}
-        /*
-        for (var i = 0;
-            interactable.OnClick.AddListener(() => {
-                FadeToScene(sceneName);
-            });
-        }*/
     }
 
 
