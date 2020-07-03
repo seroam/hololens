@@ -11,7 +11,7 @@ public class PlaceLane : MonoBehaviour
     // Update is called once per frame
     void Update() {
         // Bit shift the index of the layer (10) to get a bit mask
-        int layerMask = 1 << LayerMask.NameToLayer("floor");
+        int layerMask = 1 << LayerMask.NameToLayer("Spatial Awareness");
 
         // Does the ray intersect any objects on layer 10?
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hit, Mathf.Infinity, layerMask)) {
@@ -19,7 +19,8 @@ public class PlaceLane : MonoBehaviour
 
             //Debug.Log($"Hit in position\t({hit.point.x}, {hit.point.y}, {hit.point.z})");
             if (placing) {
-				InstantiateLevel.current.transform.position = hit.point;
+                Vector3 pos = new Vector3(hit.point.x, hit.point.y + 0.01f, hit.point.z);
+                InstantiateLevel.current.transform.position = pos;//hit.point;
 			}
 		}
         else {
