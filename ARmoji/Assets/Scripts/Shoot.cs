@@ -35,7 +35,6 @@ public class Shoot : MonoBehaviour {
 		}
 
         _interactable.OnClick.AddListener(() => {
-            Debug.Log("Registered click.");
             Launch();
         });
     }

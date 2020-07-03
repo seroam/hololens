@@ -8,6 +8,9 @@ public class InstantiateLevel : MonoBehaviour
     public GameObject lanePrefab;
     public static GameObject current = null;
 
+    public static GameObject ball = null;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,16 +20,19 @@ public class InstantiateLevel : MonoBehaviour
 
         current.GetComponent<LookAtCamera>().enabled = true;
 
+        current.GetComponent<BoxCollider>().enabled = true;
         Interactable lane = current.AddComponent<Interactable>();
         DisablePinPhysics();
+
         lane.OnClick.AddListener(() => PlaceLane.Place());
+
 
        // Destroy(current);
     }
 
     public void Reset(){
         Destroy(current);
-        //current = Instantiate(lanePrefab, transform);
+
         Transform currentTransform = current.transform;
         current = Instantiate(lanePrefab, currentTransform.position, currentTransform.rotation, transform);
 	}

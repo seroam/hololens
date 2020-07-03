@@ -29,6 +29,8 @@ public class PlaceLane : MonoBehaviour
 
     public static void Place(){
         placing = false;
+
+        InstantiateLevel.current.GetComponent<BoxCollider>().enabled = false;
         InstantiateLevel.current.GetComponent<LookAtCamera>().enabled = false;
 
         InstantiateLevel.current.GetComponent<CanvasGroup>().alpha = 1;
